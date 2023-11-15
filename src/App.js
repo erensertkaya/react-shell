@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './App.css';
 
 function App() {
     const [output, setOutput] = useState([]);
     const [input, setInput] = useState('');
     const [inputArr, setInputArr] = useState([]);
+    const inputRef = useRef(null);
 
+    useEffect(() => {
+        // Focus on the input field when the component mounts or when the input state changes
+        inputRef.current.focus();
+    }, [input]);
     const handleInput = (event) => {
         if (event.key === 'Enter') {
             const command = event.target.value.split(" ");
@@ -28,6 +33,9 @@ function App() {
                 break;
             case 'ls':
                 showLs();
+                break;
+            case 'clear':
+                clearCommands();
                 break;
             default:
                 setOutput([...output, `${command} is not recognized as a command`]);
@@ -68,13 +76,19 @@ function App() {
              `]);
     };
 
+    const clearCommands = () => {
+        setOutput([]);
+        setInputArr([]);
+    };
+
+
     return (
         <div className="App">
             <div id="shell">
                 {inputArr.map((line, index) => (
                     <div id="input-container">
                         <div id="output">
-                            <span key={index}>[master@fedora ~]$ {line}</span>
+                            [master@fedora ~]$ <span className={"oldCommand"} key={index}> {line}</span>
                             {output.map((outputLine, outputIndex) => (
                                 index === outputIndex ?
                                     <p key={outputIndex} dangerouslySetInnerHTML={{__html: replaceWithBr(outputLine)}} ></p> :
@@ -92,6 +106,7 @@ function App() {
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={handleInput}
+                        ref={inputRef}
                         autoFocus
                     />
                 </div>
