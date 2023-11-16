@@ -59,7 +59,83 @@ function App() {
     const showCat = (param) => {
         switch (param) {
             case 'cv.txt':
-                setOutput([...output, 'benim cv bu']);
+                setOutput([...output, `
+        
+Software Developer
+Eleman.net · Full-time
+Jul 2022 - Present · 1 yr 5 mos
+Istanbul, Turkey · Hybrid
+
+    - Creating new features and developing already existing features both on platform and crm panel.
+    - New UI - UX implementations and bug fixes.
+    - Third party api integrations.
+
+    Skills: PHP · JavaScript · SQL · HTML · CSS · MySQL · Bootstrap · jQuery · Redis · Linux · Subversion
+        
+Software Developer
+Kozmos Group · Full-time
+Jul 2021 - Jun 2022 · 1 yr
+Istanbul, Turkey · On-site
+
+    - Maintaining web based ERP system modules.
+    - Developing new modules for web based ERP system.
+    - Integrating web based ERP system with third party api’s.
+    - Developing custom jQuery plugins.
+    - Developing and maintaining a winform application.
+    - Creating CI/CD pipeline from scratch for winform application.
+    - Enhancing winform application security and performance.
+    
+    Skills: PHP · JavaScript · SQL · Node.js · C# · HTML · CSS · MySQL · Codeigniter · Bootstrap · jQuery · Linux · Git · Visual Studio · Continuous Integration and Continuous Delivery (CI/CD)        
+                
+Software Developer
+Silva · Full-time 
+Feb 2021 - Jun 2021 · 5 mos 
+İstanbul, Türkiye · On-site
+
+    - Developing a modular CMS from scratch with using HMVC design pattern.
+    - Implementing fully modular plugin and module system.
+    - Also helping bottlenecks of company's other project which is an E-Commerce project.
+    
+    Skills: PHP · JavaScript · SQL · HTML · CSS · MySQL · Codeigniter · Bootstrap · jQuery · Git
+                
+Junior Software Developer
+Skala Teknoloji Hizmetleri · Full-time
+Sep 2020 - Jan 2021 · 5 mos 
+İstanbul, Türkiye · On-site
+
+    - Installing Bitrix24 On Premise to servers of our customers.
+    - Developing custom modules for Bitrix24.
+    - Developing web services for Bitrix24.
+    
+    Skills: PHP · JavaScript · SQL · HTML · CSS · MySQL · jQuery · Linux · Git
+                
+Junior Software Developer
+Aytunga · Apprenticeship
+Apr 2019 - Aug 2020 · 1 yr 5 mos 
+İstanbul · Hybrid
+
+    - Development of platform's CRM panel from scratch and it's modules.
+    - Development of platform's mobile app.
+    
+    Skills: PHP · JavaScript · SQL · HTML · CSS · MySQL · Bootstrap · jQuery · React.js · React Native · Linux · Git
+
+                `]);
+                break;
+            case 'contact.txt':
+                setOutput([...output, `
+                <a href="https://www.linkedin.com/in/erensertkaya" target="_blank">Linkedin</a>
+                <a href="https://github.com/erensertkaya" target="_blank">Github</a>
+                `]);
+                break;
+            case 'skills.txt':
+                setOutput([...output, `
+                Programming Languages: PHP, JavaScript, HTML, CSS
+                Programming Frameworks: Codeigniter, Laravel, jQuery, React, Plasmo, Bootstrap
+                DevOps: Linux, Docker, Git, SVN
+                Database: MySQL, MongoDB, Redis
+                Platform Experience: Backend , Frontend, Browser Extensions, Desktop
+                Domain Experience: Production, E-commerce, Human Resource, Social Media  
+                `]);
                 break;
             default:
                 setOutput([...output, 'Nothing to show.']);
