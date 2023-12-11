@@ -6,10 +6,15 @@ function App() {
     const [input, setInput] = useState('');
     const [inputArr, setInputArr] = useState([]);
     const inputRef = useRef(null);
-
+    const [initialLoad, setInitialLoad] = useState(true);
+    if (initialLoad) {
+        setInitialLoad(false);
+        setInput("help");
+    }
     useEffect(() => {
         // Focus on the input field when the component mounts or when the input state changes
         inputRef.current.focus();
+
     }, [input]);
     const handleInput = (event) => {
         if (event.key === 'Enter') {
@@ -173,7 +178,6 @@ Apr 2019 - Aug 2020 · 1 yr 5 mos
                         </div>
                     </div>
                 ))}
-
 
                 <div id="input-container">
                     <span>[master@fedora ~]$ </span>
